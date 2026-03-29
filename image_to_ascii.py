@@ -54,6 +54,7 @@ def image_to_ascii(image_path: str, output_width: int = 120) -> str:
 
     # Step C: Map every pixel to an ASCII character
     pixels = list(img.getdata())          # flat list of brightness values (0–255)
+    print(pixels[:100])  # debug: show first 100 pixel brightness values
     ascii_chars = [pixel_to_ascii(p) for p in pixels]
 
     # Step D: Split flat list into rows matching image width
@@ -155,8 +156,9 @@ if __name__ == "__main__":
     print(f"Converting '{path}' to ASCII art...")
 
     try:
-        ascii_result = image_to_ascii(path, output_width=120)
+        ascii_result = image_to_ascii(path, output_width=220)
         print("Done! Opening GUI window...")
+        print(ascii_result)
         show_ascii_in_window(ascii_result, path)
     except FileNotFoundError:
         print(f"Error: File '{path}' not found.")
