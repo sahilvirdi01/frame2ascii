@@ -66,7 +66,7 @@ def image_to_ascii(image_path: str, output_width: int = 120) -> str:
 
 
 # ── 3. GUI DISPLAY ────────────────────────────────────────────────────────────
-
+"""
 def show_ascii_in_window(ascii_art: str, image_path: str):
     """Display the ASCII art string inside a Tkinter window."""
 
@@ -137,8 +137,7 @@ def show_ascii_in_window(ascii_art: str, image_path: str):
     # Open window at a reasonable size (resizable)
     root.geometry("900x600")
     root.mainloop()
-
-
+"""
 # ── 4. ENTRY POINT ────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -159,7 +158,7 @@ if __name__ == "__main__":
         ascii_result = image_to_ascii(path, output_width=220)
         print("Done! Opening GUI window...")
         print(ascii_result)
-        show_ascii_in_window(ascii_result, path)
+        # show_ascii_in_window(ascii_result, path)
     except FileNotFoundError:
         print(f"Error: File '{path}' not found.")
     except Exception as e:
